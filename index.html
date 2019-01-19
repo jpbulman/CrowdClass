@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <title>Crowd Source</title>
 </head>
@@ -10,30 +11,6 @@
 
 <div class="container">
     <div class="row">
-        <div class="form-group col-md">
-            <div>
-                <label>Is this a chocolate chip or oatmeal raisin cookie?</label>
-            </div>
-            
-            <div>
-                <div class="form-check">
-                    <input class = "form-check-input" type = "radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <label class = "form-check-label" for="exampleRadios1">Chocolate Chip</label>
-                </div>
-            </div>
-            
-            <div>
-                <div class="form-check">
-                    <input class = "form-check-input" type = "radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <label class = "form-check-label" for="exampleRadios1">Oatmeal Raisin</label>
-                </div>
-            </div>
-            
-            <div>
-                <button class = "btn btn-primary" type = "submit">Submit</button>
-            </div>
-        </div>
-
         <div class="form-group col">
             <div>
                 <label>Is this a chocolate chip or oatmeal raisin cookie?</label>
@@ -41,24 +18,50 @@
             
             <div>
                 <div class="form-check">
-                    <input class = "form-check-input" type = "radio" name="exampleRadios" id="exampleRadios2" value="option1">
-                    <label class = "form-check-label" for="exampleRadios2">Chocolate Chip</label>
+                    <input class = "form-check-input" type = "radio" name="exampleRadios" id="question1cc" value="option1">
+                    <label class = "form-check-label" for="exampleRadios1">Chocolate Chip <i style="color:burlywood" class="fas fa-cookie-bite"></i></label>
                 </div>
             </div>
             
             <div>
                 <div class="form-check">
-                    <input class = "form-check-input" type = "radio" name="exampleRadios" id="exampleRadios2" value="option1">
-                    <label class = "form-check-label" for="exampleRadios2">Oatmeal Raisin</label>
+                    <input class = "form-check-input" type = "radio" name="exampleRadios" id="question1or" value="option1">
+                    <label class = "form-check-label" for="exampleRadios1">Oatmeal Raisin <i style="color:tan" class="fas fa-cookie"></i></label>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="form-group ">
+            <div>
+                <label>Is this a chocolate chip or oatmeal raisin cookie?</label>
+            </div>
+            
+            <div>
+                <div class="form-check">
+                    <input class = "form-check-input" type = "radio" name="question2" id="question2cc" value="option1">
+                    <label class = "form-check-label" for="exampleRadios2">Chocolate Chip <i style="color:burlywood" class="fas fa-cookie-bite"></i></label>
                 </div>
             </div>
             
             <div>
-                <button class = "btn btn-primary" type = "submit">Submit</button>
+                <div class="form-check">
+                    <input class = "form-check-input" type = "radio" name="question2" id="question2or" value="option1">
+                    <label class = "form-check-label" for="exampleRadios2">Oatmeal Raisin <i style="color:tan" class="fas fa-cookie"></i></label>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <button class = "btn btn-primary" type = "submit" onclick="submitQuestions()">Submit</button>
+    </div>
+
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 </body>
 </html>
