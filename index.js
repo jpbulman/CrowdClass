@@ -267,14 +267,14 @@ async function submitQuestions(){
                 console.log("User is correct")
                 // setVal()
                 document.getElementById("success").style.visibility = "visible";
-                await sleep(2000)
+                await sleep(3000)
                 location.reload()
             }
         }
    }
 
    document.getElementById("warning").style.visibility = "visible"
-   await sleep(2000);
+   await sleep(3000);
    location.reload()
 }
 
