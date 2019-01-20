@@ -9,11 +9,12 @@ from keras.models import Sequential
 from keras.layers import *
 from keras.optimizers import *
 
-IMAGE_SIZE = 256
+IMAGE_SIZE = 200
 IMAGE_SIZE_DISPLAY = 512
 
 train_data = 'Images/Train'
 test_data = 'Images/Test'
+demo_data = 'Images/Demo'
 
 def get_label(img):
 	label = img.split('.')[0]
@@ -48,6 +49,7 @@ def grab_data_from_rgb(imgDir):
 
 training_pics = grab_data_from(train_data)
 testing_pics = grab_data_from(test_data)
+demo_pics = grab_data_from(demo_data)
 
 #testing_pics_rgb = grab_data_from_rgb(test_data)
 
@@ -73,9 +75,10 @@ model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 model.add(Conv2D(filters = 80, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
 model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
+
 # Convolution layer 4
 model.add(Conv2D(filters = 80, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
-model.add(MaxPool2D(pool_size = 5, padding = 'same'))
+#model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
 # Convolution layer 5
 model.add(Conv2D(filters = 80, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
@@ -83,9 +86,10 @@ model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
 # Convolution layer 6
 model.add(Conv2D(filters = 80, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
-model.add(MaxPool2D(pool_size = 5, padding = 'same'))
+#model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
-model.add(Dropout(0.25))
+
+model.add(Dropout(0.3))
 model.add(Flatten())
 model.add(Dense(512, activation = 'relu'))
 model.add(Dropout(rate = 0.5))
@@ -93,12 +97,12 @@ model.add(Dense(2, activation = 'softmax'))
 optimizer = Adam(lr = 1e-3)
 
 model.compile(optimizer = optimizer, loss = 'categorical_crossentropy', metrics = ['accuracy'])
-model.fit(x = tr_img_data, y = tr_lbl_data, epochs = 50, batch_size = 100)
+model.fit(x = tr_img_data, y = tr_lbl_data, epochs = 40, batch_size = 40)
 model.summary()
 
 fig = plt.figure(figsize = (14, 14))
 
-for cnt, data in enumerate(testing_pics[0:9]):
+for cnt, data in enumerate(demo_pics):
 
 	y = fig.add_subplot(3, 3, cnt+1)
 	img = data[0]
