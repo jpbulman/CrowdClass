@@ -68,7 +68,7 @@ function makeApiCall() {
       spreadsheetId: '1_Up8C6sKiGnA5VsY-6MMgI60MLpu7EHM6r1h7HIPx54',  // TODO: Update placeholder value.
 
       // The A1 notation of the values to retrieve.
-      range: 'A1:A500',  // TODO: Update placeholder value.
+      range: 'A1:B500',  // TODO: Update placeholder value.
 
     //   // How values should be represented in the output.
     //   // The default render option is ValueRenderOption.FORMATTED_VALUE.
@@ -143,6 +143,7 @@ var qIsCC = false;
 
 async function update(){
     await sleep(1500);
+    console.log(lou)
     var randCook = Math.floor((Math.random() * 400) + 0);
 
     var randNext = Math.floor((Math.random() * 400) + 0);
@@ -220,8 +221,9 @@ async function update(){
     document.getElementById("q1img").src = lou[randCook][0];
     document.getElementById("q2img").src = lou[randNext][0];
 
-    console.log(randCook,lou[randCook][0])
-    console.log(randNext,lou[randNext][0])
+    console.log(randCook,lou[randCook][0],lou[randCook][1])
+    console.log(randNext,lou[randNext][0],lou[randNext][1],5)
+    console.log(111111)
 
     console.log(q1IsRight,qIsCC)
 
@@ -229,18 +231,24 @@ async function update(){
 
 update()
 
-function submitQuestions(){
+async function submitQuestions(){
    if(q1IsRight){
        if(qIsCC){
             if(document.getElementById("question1cc").checked){
                 console.log("User is correct")
-                setVal()
+                // setVal()
+                document.getElementById("success").style.visibility = "visible";
+                await sleep(2000)
+                location.reload()
             }
        }
        else{
             if(document.getElementById("question1or").checked){
                 console.log("User is correct")
-                setVal()
+                //setVal()
+                document.getElementById("success").style.visibility = "visible";
+                await sleep(2000)
+                location.reload()
             }
        }
    }
@@ -248,15 +256,25 @@ function submitQuestions(){
         if(qIsCC){
             if(document.getElementById("question2cc").checked){
                 console.log("User is correct")
-                setVal()
+                // setVal()
+                document.getElementById("success").style.visibility = "visible";
+                await sleep(2000)
+                location.reload()
             }
         }
         else{
             if(document.getElementById("question2or").checked){
                 console.log("User is correct")
-                setVal()
+                // setVal()
+                document.getElementById("success").style.visibility = "visible";
+                await sleep(2000)
+                location.reload()
             }
         }
    }
+
+   document.getElementById("warning").style.visibility = "visible"
+   await sleep(2000);
+   location.reload()
 }
 

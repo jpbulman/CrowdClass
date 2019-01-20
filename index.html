@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <title>Crowd Source</title>
 </head>
-<body>
+<body style="background-color:blanchedalmond">
 
 <div class="container">
     <div class="row">
@@ -61,10 +62,22 @@
         <button class = "btn btn-primary" type = "submit" onclick="submitQuestions()">Submit</button>
     </div>
 
-    <button id="authorize_button" style="display: none; ">Authorize</button>
-    <button id="signout_button" style="display: none;">Sign Out</button>
+    <button id="authorize_button" style="visibility:hidden" onclick="handleSignInClick()" >Authorize</button>
+    <button id="signout_button" style="visibility:hidden" >Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <div id="warning" style="visibility:hidden;" class="alert alert-danger" role="alert">
+        You entered the incorrect answers, please try again
+    </div>
+
+    <div id="success" style="visibility: hidden" class="alert alert-success" role="alert">
+        That is correct, good job! Wait to answer again.
+    </div>
+
+    <div id="alert1" style="text-align: center" class="alert alert-primary" role="alert">
+        	🍪 Our website uses cookies 	🍪
+    </div>
 
 </div>
 
