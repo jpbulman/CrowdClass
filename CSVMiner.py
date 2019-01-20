@@ -4,9 +4,13 @@ import shutil
 import requests
 import os
 
+#probably needs to pip some stuff to work for either urllib and requests
+
 opener=urllib.request.build_opener()
 opener.addheaders=[('User-Agent','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36')]
 urllib.request.install_opener(opener)  
+
+#updates train and test folders in image folder
 
 #clean train folder
 if os.path.isdir('Images/Train'):
